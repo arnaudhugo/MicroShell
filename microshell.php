@@ -6,7 +6,7 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Thu Oct 12 19:18:35 2017 ARNAUD Hugo
-// Last update Thu Oct 12 21:35:19 2017 ARNAUD Hugo
+// Last update Thu Oct 12 23:29:38 2017 ARNAUD Hugo
 //
 
 $command_txt = "";
@@ -14,6 +14,7 @@ $command = "";
 $com = "";
 $matches = "";
 $text = "";
+$file = "";
 $a = 0;
 $l = 0;
 
@@ -26,18 +27,19 @@ while ($command_txt != "exit")
 	$command = $com[0][0];
 	if ($command == "echo")
 	  {
-	    $a = 0;
-	    while (isset($command_txt[$a + 5]) != NULL)
+	    $a = 5;
+	    while (isset($command_txt[$a]) != NULL)
 	      {
-		$text = $text . $command_txt[$a + 5];
+		$text = $text . $command_txt[$a];
 		$a = $a + 1;
 	      }
 	    echo $text, "\n";
 	    $text = "";
 	  }
+	else if ($command == "clear") // BONUS
+	    echo "\033c";
 	else if ($command == "pwd") // getenv()
-	  {
-	  }
+	    echo getenv("PWD"), "\n";
 	else if ($command == "cd")
 	  {
 	  }
@@ -46,6 +48,20 @@ while ($command_txt != "exit")
 	  }
 	else if ($command == "cat")
 	  {
+	    $a = 4;
+	    $file = "";
+	    while (isset($command_txt[$a]))
+	      {
+		if ($command_txt[$a] == " " || $command_txt[$a] == "\t")
+		  {
+		    echo $file, "\n";
+		    $file = "";
+		  }
+		else
+		  $file = $file . $command_txt[$a];
+		$a = $a + 1;
+	      }
+	    echo $file, "\n";
 	  }
 	else if ($command == "env")
 	  {
