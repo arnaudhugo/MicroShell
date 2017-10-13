@@ -6,7 +6,7 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Thu Oct 12 19:18:35 2017 ARNAUD Hugo
-// Last update Fri Oct 13 10:08:42 2017 ARNAUD Hugo
+// Last update Fri Oct 13 20:56:46 2017 ARNAUD Hugo
 //
 
 include_once("goodCommand.php");
@@ -46,27 +46,26 @@ $com = "";
 
 while ($commandTxt != "exit")
 {
-    echo "$> ";
-    $commandTxt = readline("");
-    if ($commandTxt && ($commandTxt >= 'a' && $commandTxt <= 'z'))
+  echo "$> ";
+  $commandTxt = readline("");
+  if ($commandTxt && ($commandTxt >= 'a' && $commandTxt <= 'z'))
     {
-        preg_match_all("([\w]+)", $commandTxt, $com);
-        $command = $com[0][0];
-
-        if ((f_goodCommand($command)) == true)
-        {
-            $func = "f_" . $command;
-            $func($commandTxt);
-        }
-        else
-            echo "{$command}: Command not found", "\n";
+      preg_match_all("([\w]+)", $commandTxt, $com);
+      $command = $com[0][0];
+      if ((f_goodCommand($command)) == true)
+	{
+	  $func = "f_" . $command;
+	  $func($commandTxt);
+	}
+      else
+	echo "{$command}: Command not found", "\n";
     }
-    else if ($commandTxt == "")
+  else if ($commandTxt == "")
     {
     }
-    else
-        echo "{$commandTxt}: Command not found", "\n";
-  }
+  else
+    echo "{$commandTxt}: Command not found", "\n";
+}
 
 /*
 echo "\033c";
