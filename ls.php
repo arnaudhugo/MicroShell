@@ -8,13 +8,13 @@
 // Last update Fri Oct 13 10:08:42 2017 ARNAUD Hugo
 //
 
-function f_ls($command_txt)
+function f_ls($commandTxt) // Pb: '*''/''@' dans dossier
 {
     $a = 3;
     $dirName = "./";
-    while (isset($command_txt[$a]) != NULL)
+    while (isset($commandTxt[$a]) != NULL)
     {
-        $dirName = $dirName . $command_txt[$a];
+        $dirName = $dirName . $commandTxt[$a];
         $a = $a + 1;
     }
     $dir = opendir($dirName);
