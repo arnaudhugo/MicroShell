@@ -8,14 +8,20 @@
 // Last update Fri Oct 13 10:08:42 2017 ARNAUD Hugo
 //
 
-function f_echo($commandTxt) // GOOD
+function f_cat($commandTxt)
 {
-    $a = 5;
-    $text = "";
+    $a = 4;
+    $file = "";
     while (isset($commandTxt[$a]) != NULL)
     {
-        $text = $text . $commandTxt[$a];
+        if ($commandTxt[$a] == " " || $commandTxt[$a] == "\t")
+        {
+            echo $file, "\n";
+            $file = "";
+        }
+        else
+            $file = $file . $commandTxt[$a];
         $a = $a + 1;
     }
-    echo $text, "\n";
+//echo $file, "\n";
 }

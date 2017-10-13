@@ -11,6 +11,8 @@
 
 include_once("echo.php");
 include_once("ls.php");
+include_once("clear.php");
+include_once("pwd.php");
 
 /*
 echo "\033c";
@@ -34,76 +36,33 @@ echo "     |____________________________________________________________________
 echo "", "\n";
 */
 
-$command_txt = "";
+$commandTxt = "";
 $command = "";
 $com = "";
-$matches = "";
-$text = "";
-$file = "";
-$a = 0;
-$l = 0;
 
-while ($command_txt != "exit")
+while ($commandTxt != "exit")
 {
     echo "$> ";
-    $command_txt = readline("");
-    if ($command_txt && ($command_txt >= 'a' && $command_txt <= 'z'))
+    $commandTxt = readline("");
+    if ($commandTxt && ($commandTxt >= 'a' && $commandTxt <= 'z'))
     {
-        preg_match_all("([\w]+)", $command_txt, $com);
+        preg_match_all("([\w]+)", $commandTxt, $com);
         $command = $com[0][0];
         if ($command == "echo") // GOOD
         {
-            echo f_echo($command_txt);
+            f_echo($commandTxt);
         }
         else if ($command == "clear") // BONUS GOOD
-            echo "\033c";
+            f_clear();
         else if ($command == "pwd") // getenv() GOOD
-            echo getenv("PWD"), "\n";
-        else if ($command == "cd") // A FAIRE
+            f_pwd();
+        else if ($command == "ls")  // Pb: '*''/''@' dans dossier
         {
-        }
-        else if ($command == "ls")  // A DEBUG
-        {
-            f_ls($command_txt);
-/*
-            $a = 3;
-            $dirName = "./";
-            while (isset($command_txt[$a]) != NULL)
-            {
-                $dirName = $dirName . $command_txt[$a];
-                $a = $a + 1;
-            }
-            $dir = opendir($dirName);
-            while ($fichier = readdir($dir))
-            {
-                //if ($fichier != '.' && $fichier != '..')
-                //{
-                    if (is_dir($fichier))
-                        echo $fichier, "/", "\n";
-                    else if (is_executable($fichier))
-                        echo $fichier, "*", "\n";
-                    else if (is_link($fichier))
-                        echo $fichier, "@", "\n";
-                //}
-            }
-*/
+            f_ls($commandTxt);
         }
         else if ($command == "cat") // get_file_content() A DEBUG
         {
-            $a = 4;
-            $file = "";
-            while (isset($command_txt[$a]) != NULL)
-            {
-                if ($command_txt[$a] == " " || $command_txt[$a] == "\t")
-                {
-                    echo $file, "\n";
-                    $file = "";
-                }
-                else
-                    $file = $file . $command_txt[$a];
-                $a = $a + 1;
-            }
-            //echo $file, "\n";
+            f_cat($commandTxt);
         }
         else if ($command == "env") // $_SERVER
         {
@@ -114,17 +73,20 @@ while ($command_txt != "exit")
         else if ($command == "unsetenv")
         {
         }
+        else if ($command == "cd") // A FAIRE
+        {
+        }
         else if ($command == "exit")
         {
         }
         else
             echo "{$command}: Command not found", "\n";
     }
-    else if ($command_txt == "")
+    else if ($commandTxt == "")
     {
     }
     else
-        echo "{$command_txt}: Command not found", "\n";
+        echo "{$commandTxt}: Command not found", "\n";
   }
 
 /*
