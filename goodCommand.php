@@ -9,8 +9,8 @@
 //
 
 function f_goodCommand($command)
-{
-    $array = array("pwd", "ls", "echo", "clear", "car");
+{               //   ok  ,  ok  ,  no ,   ok  ,   ok   ,  no  ,  no ,  ok  ,    no   ,     no    =  5/10
+    $array = array("exit", "pwd", "ls", "echo", "clear", "cat", "cd", "env", "setenv", "unsetenv");
     $a = 0;
     $goodCom = false;
     while (isset($array[$a]) && $goodCom != true)

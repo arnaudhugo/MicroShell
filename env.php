@@ -10,9 +10,18 @@
 
 include_once("microshell.php");
 
-function f_pwd() // GOOD
+function f_env()
 {
     global $env;
-    $pwd = $env['PWD'];
-    echo $pwd, "\n";
+    $a = 0;
+    $str = array_keys($env);
+    while (isset($env[$str[$a]]))
+    {
+        if (is_string($env[$str[$a]]))
+        {
+            $newEnv = $str[$a] . "=" . $env[$str[$a]];
+            echo $newEnv, "\n";
+        }
+        $a = $a + 1;
+    }
 }

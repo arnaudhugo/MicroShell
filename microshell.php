@@ -14,6 +14,7 @@ include_once("echo.php");
 include_once("ls.php");
 include_once("clear.php");
 include_once("pwd.php");
+include_once("env.php");
 
 /*
 echo "\033c";
@@ -37,6 +38,7 @@ echo "     |____________________________________________________________________
 echo "", "\n";
 */
 
+$env = $_SERVER;
 $commandTxt = "";
 $command = "";
 $com = "";
