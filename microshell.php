@@ -15,6 +15,7 @@ include_once("ls.php");
 include_once("clear.php");
 include_once("pwd.php");
 include_once("env.php");
+include_once("cat.php");
 
 /*
 echo "\033c";
