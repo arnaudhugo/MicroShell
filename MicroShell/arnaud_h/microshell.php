@@ -64,8 +64,8 @@ while ($command_txt != "exit")
         }
         else if ($command == "ls")  // A DEBUG
         {
-            echo f_ls($command_txt);
-            /*
+            f_ls($command_txt);
+/*
             $a = 3;
             $dirName = "./";
             while (isset($command_txt[$a]) != NULL)
@@ -76,8 +76,8 @@ while ($command_txt != "exit")
             $dir = opendir($dirName);
             while ($fichier = readdir($dir))
             {
-                f ($fichier != '.' && $fichier != '..')
-                {
+                //if ($fichier != '.' && $fichier != '..')
+                //{
                     if (is_dir($fichier))
                         echo $fichier, "/", "\n";
                     else if (is_executable($fichier))
@@ -86,7 +86,7 @@ while ($command_txt != "exit")
                         echo $fichier, "@", "\n";
                 //}
             }
-            */
+*/
         }
         else if ($command == "cat") // get_file_content() A DEBUG
         {
@@ -105,7 +105,7 @@ while ($command_txt != "exit")
             }
             //echo $file, "\n";
         }
-        else if ($command == "env")
+        else if ($command == "env") // $_SERVER
         {
         }
         else if ($command == "setenv")

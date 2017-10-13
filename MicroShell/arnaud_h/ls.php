@@ -20,14 +20,17 @@ function f_ls($command_txt)
     $dir = opendir($dirName);
     while ($fichier = readdir($dir))
     {
-        /*if ($fichier != '.' && $fichier != '..')
-        {*/
-        if (is_dir($fichier))
-            return $fichier . "/" . "\n";
-        else if (is_executable($fichier))
-            return $fichier . "*" . "\n";
-        else if (is_link($fichier))
-            return $fichier . "@" . "\n";
-        //}
+        if ($fichier[0] != '.' && $fichier[0] != '..')
+        {
+            if (is_link($fichier))
+                echo $fichier, "@", "\n";
+            else if (is_dir($fichier))
+                echo $fichier, "/", "\n";
+            else if (is_executable($fichier))
+                echo $fichier, "*", "\n";
+            else
+                echo $fichier, "\n";
+        }
+
     }
 }
