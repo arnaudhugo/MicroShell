@@ -60,7 +60,7 @@ while ($commandTxt != "exit")
       else
 	echo "{$command}: Command not found", "\n";
     }
-  else if ($commandTxt == "" || $commandTxt == "exit")
+  else if ($commandTxt == "" || $commandTxt == "exit" || $commandTxt == " ")
     {
     }
   else
