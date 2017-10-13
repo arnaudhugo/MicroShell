@@ -48,7 +48,7 @@ while ($commandTxt != "exit")
 {
   echo "$> ";
   $commandTxt = readline("");
-  if ($commandTxt && ($commandTxt >= 'a' && $commandTxt <= 'z'))
+  if (isset($commandTxt) && $commandTxt != "exit" && ($commandTxt >= 'a' && $commandTxt <= 'z'))
     {
       preg_match_all("([\w]+)", $commandTxt, $com);
       $command = $com[0][0];
@@ -60,7 +60,7 @@ while ($commandTxt != "exit")
       else
 	echo "{$command}: Command not found", "\n";
     }
-  else if ($commandTxt == "")
+  else if ($commandTxt == "" || $commandTxt == "exit")
     {
     }
   else
