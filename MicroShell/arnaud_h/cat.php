@@ -10,18 +10,23 @@
 
 function f_cat($commandTxt)
 {
+    $a = 0;
+    while (isset($commandTxt[$a]) != NULL)
+        $a = $a + 1;
+    if ($commandTxt[$a] != " ")
+        $commandTxt[$a] = " ";
     $a = 4;
     $file = "";
-    while (isset($commandTxt[$a]) != NULL)
+    while (isset($commandTxt[$a - 1]) != NULL)
     {
-        if ($commandTxt[$a] == " " || $commandTxt[$a] == "\t")
+        if ($commandTxt[$a] == " ") // && $commandTxt[$b - 1] != " ")
         {
-            echo $file, "\n";
+            $open = fopen($file, "r");
+            echo fread($open, filesize($file)) . "\n";
+            fclose($open);
             $file = "";
-        }
-        else
+        } else
             $file = $file . $commandTxt[$a];
         $a = $a + 1;
     }
-//echo $file, "\n";
 }
