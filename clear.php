@@ -8,7 +8,7 @@
 // Last update Fri Oct 13 10:08:42 2017 ARNAUD Hugo
 //
 
-function f_clear() // GOOD
+function f_clear()
 {
     echo "\033c";
 }
