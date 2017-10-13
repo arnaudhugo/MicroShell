@@ -9,6 +9,7 @@
 // Last update Fri Oct 13 10:08:42 2017 ARNAUD Hugo
 //
 
+include_once("goodCommand.php");
 include_once("echo.php");
 include_once("ls.php");
 include_once("clear.php");
@@ -48,36 +49,11 @@ while ($commandTxt != "exit")
     {
         preg_match_all("([\w]+)", $commandTxt, $com);
         $command = $com[0][0];
-        if ($command == "echo") // GOOD
+
+        if ((f_goodCommand($command)) == true)
         {
-            f_echo($commandTxt);
-        }
-        else if ($command == "clear") // BONUS GOOD
-            f_clear();
-        else if ($command == "pwd") // getenv() GOOD
-            f_pwd();
-        else if ($command == "ls")  // Pb: '*''/''@' dans dossier
-        {
-            f_ls($commandTxt);
-        }
-        else if ($command == "cat") // get_file_content() A DEBUG
-        {
-            f_cat($commandTxt);
-        }
-        else if ($command == "env") // $_SERVER
-        {
-        }
-        else if ($command == "setenv")
-        {
-        }
-        else if ($command == "unsetenv")
-        {
-        }
-        else if ($command == "cd") // A FAIRE
-        {
-        }
-        else if ($command == "exit")
-        {
+            $func = "f_" . $command;
+            $func($commandTxt);
         }
         else
             echo "{$command}: Command not found", "\n";
