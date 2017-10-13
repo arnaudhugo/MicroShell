@@ -1,70 +1,70 @@
 <?php
-// microshell.php for  in /home/arnaud/arnaud_h
-//
+// ls.php for microshell in /home/arnaud/arnaud_h
+// 
 // Made by ARNAUD Hugo
 // Login   <arnaud_h@etna-alternance.net>
-//
-// Started on  Thu Oct 12 19:18:35 2017 ARNAUD Hugo
-// Last update Fri Oct 13 10:08:42 2017 ARNAUD Hugo
+// 
+// Started on  Fri Oct 13 20:51:23 2017 ARNAUD Hugo
+// Last update Fri Oct 13 20:55:00 2017 ARNAUD Hugo
 //
 
 function f_ls($commandTxt)
 {
-    $a = 3;
-    $b = 0;
-    $dirName = "./";
-    $tab = array();
-    while (isset($commandTxt[$a]) != NULL)
+  $a = 3;
+  $b = 0;
+  $dirName = "./";
+  $tab = array();
+  while (isset($commandTxt[$a]) != NULL)
     {
-        $dirName = $dirName . $commandTxt[$a];
-        $a = $a + 1;
+      $dirName = $dirName . $commandTxt[$a];
+      $a = $a + 1;
     }
-    $dir = opendir($dirName);
-    while ($fichier = readdir($dir))
+  $dir = opendir($dirName);
+  while ($fichier = readdir($dir))
     {
-        if ($fichier[0] != '.' && $fichier[0] != '..')
-        {
-            if (is_link($fichier))
-                $tab[$b] = $fichier . "@" . "\n";
-            else if (is_dir($fichier))
-                $tab[$b] = $fichier . "/" . "\n";
-            else if (is_executable($fichier))
-                $tab[$b] = $fichier . "*" . "\n";
-            else
-                $tab[$b] = $fichier . "\n";
-            $b = $b + 1;
-        }
+      if ($fichier[0] != '.' && $fichier[0] != '..')
+	{
+	  if (is_link($fichier))
+	    $tab[$b] = $fichier . "@" . "\n";
+	  else if (is_dir($fichier))
+	    $tab[$b] = $fichier . "/" . "\n";
+	  else if (is_executable($fichier))
+	    $tab[$b] = $fichier . "*" . "\n";
+	  else
+	    $tab[$b] = $fichier . "\n";
+	  $b = $b + 1;
+	}
     }
-    closedir($dir);
-    f_triTab($tab);
+  closedir($dir);
+  f_triTab($tab);
 }
 
 function f_triTab($tab)
 {
-    $tabLen = 0;
-    while (isset($tab[$tabLen]))
+  $tabLen = 0;
+  while (isset($tab[$tabLen]))
     {
-        $tabLen = $tabLen + 1;
+      $tabLen = $tabLen + 1;
     }
-    while ($tabLen > 0)
+  while ($tabLen > 0)
     {
-        $tabLen = $tabLen - 1;
-        $a = 0;
-        while ($a < $tabLen)
-        {
-            if ($tab[$a] > $tab[$a + 1])
-            {
-                $tmp = $tab[$a];
-                $tab[$a] = $tab[$a + 1];
-                $tab[$a + 1] = $tmp;
-            }
-            $a = $a + 1;
-        }
+      $tabLen = $tabLen - 1;
+      $a = 0;
+      while ($a < $tabLen)
+	{
+	  if ($tab[$a] > $tab[$a + 1])
+	    {
+	      $tmp = $tab[$a];
+	      $tab[$a] = $tab[$a + 1];
+	      $tab[$a + 1] = $tmp;
+	    }
+	  $a = $a + 1;
+	}
     }
-    $a = 0;
-    while (isset($tab[$a]))
+  $a = 0;
+  while (isset($tab[$a]))
     {
-        echo $tab[$a];
-        $a = $a + 1;
+      echo $tab[$a];
+      $a = $a + 1;
     }
 }
