@@ -8,7 +8,7 @@
 // Last update Fri Oct 13 10:08:42 2017 ARNAUD Hugo
 //
 
-function f_ls($commandTxt) // Pb: '*''/''@' dans dossier
+function f_ls($commandTxt) // Pb: '*' '/' '@' dans dossier + ordre alphabetiaue
 {
     $a = 3;
     $dirName = "./";
@@ -33,4 +33,5 @@ function f_ls($commandTxt) // Pb: '*''/''@' dans dossier
         }
 
     }
+    closedir($dir);
 }
