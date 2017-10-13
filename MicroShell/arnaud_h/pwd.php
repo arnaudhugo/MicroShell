@@ -10,7 +10,7 @@
 
 include_once("microshell.php");
 
-function f_pwd() // GOOD
+function f_pwd()
 {
     global $env;
     $pwd = $env['PWD'];
