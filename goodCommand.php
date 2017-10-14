@@ -5,7 +5,7 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Fri Oct 13 20:50:20 2017 ARNAUD Hugo
-// Last update Fri Oct 13 20:51:09 2017 ARNAUD Hugo
+// Last update Sat Oct 14 09:21:10 2017 ARNAUD Hugo
 //
 
 function f_goodCommand($command)
@@ -13,7 +13,7 @@ function f_goodCommand($command)
   $array = array("pwd", "ls", "echo", "clear", "cat", "cd", "env", "setenv", "unsetenv");
   $a = 0;
   $goodCom = false;
-  while (isset($array[$a]) && $goodCom != true)
+  while (isset($array[$a]) != NULL && $goodCom != true)
     {
       if ($command == $array[$a])
 	$goodCom = true;
