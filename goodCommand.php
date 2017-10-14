@@ -9,7 +9,7 @@
 //
 
 function f_goodCommand($command)
-{            //   ok  ,  ok ,   ok  ,   ok   ,  ok  ,  no ,  ok  ,    no   ,     no    =  7/10
+{            //   ok  ,  ok ,   ok  ,   ok   ,  ok  ,  no ,  ok  ,    no   ,     no    =  6/9 + 1 bonus
   $array = array("pwd", "ls", "echo", "clear", "cat", "cd", "env", "setenv", "unsetenv");
   $a = 0;
   $goodCom = false;
