@@ -5,12 +5,12 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Sat Oct 14 09:38:00 2017 ARNAUD Hugo
-// Last update Sat Oct 14 09:38:04 2017 ARNAUD Hugo
+// Last update Sat Oct 14 10:14:11 2017 ARNAUD Hugo
 //
 
 include_once("microshell.php");
 
-function f_pwd()
+function unctpwd()
 {
   global $env;
   $pwd = $env['PWD'];

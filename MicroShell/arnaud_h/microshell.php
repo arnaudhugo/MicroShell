@@ -6,7 +6,7 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Sat Oct 14 09:37:30 2017 ARNAUD Hugo
-// Last update Sat Oct 14 09:37:32 2017 ARNAUD Hugo
+// Last update Sat Oct 14 10:14:49 2017 ARNAUD Hugo
 //
 
 include_once("goodCommand.php");
@@ -33,10 +33,10 @@ while ($commandTxt != "exit")
     {
       preg_match_all("([\w]+)", $commandTxt, $com);
       $command = $com[0][0];
-      if ((f_goodCommand($command)) == true)
+      if ((functgoodCommand($command)) == true)
 	{
-	  $func = "f_" . $command;
-	  $func($commandTxt);
+	  $funct = "funct" . $command;
+	  $funct($commandTxt);
 	}
       else
 	echo "{$command}: Command not found", "\n";
