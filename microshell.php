@@ -6,7 +6,7 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Sat Oct 14 09:37:30 2017 ARNAUD Hugo
-// Last update Sat Oct 14 10:14:49 2017 ARNAUD Hugo
+// Last update Sat Oct 14 10:45:32 2017 ARNAUD Hugo
 //
 
 include_once("goodCommand.php");
@@ -27,8 +27,8 @@ $com = "";
 
 while ($commandTxt != "exit")
 {
-  echo "$> ";
-  $commandTxt = readline("");
+  $commandTxt = readline("$> ");
+  readline_add_history($commandTxt);
   if (isset($commandTxt) && $commandTxt != "exit" && ($commandTxt >= 'a' && $commandTxt <= 'z'))
     {
       preg_match_all("([\w]+)", $commandTxt, $com);
