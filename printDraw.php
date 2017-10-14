@@ -5,7 +5,7 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Sat Oct 14 09:37:45 2017 ARNAUD Hugo
-// Last update Sat Oct 14 11:00:13 2017 ARNAUD Hugo
+// Last update Sat Oct 14 11:59:47 2017 ARNAUD Hugo
 //
 
 function printDrawStart()
@@ -57,7 +57,7 @@ function printDrawEnd()
   echo "      ____________________________________________________________________________ ", "\n";
   echo "     |                                                                            |", "\n";
   echo "     |                  ", R, "######", N, "                                                    |", "\n";
-  echo "     |                  ", R, "# ", N, " ", R, "  ", N, " ", R, " #", N, "                                                  |", "\n";
+  echo "     |                  ", R, "# ", N, "*", R, "  ", N, "*", R, " #", N, "                                                  |", "\n";
   echo "     |            ", R, "##", N, "   ", R, "#      #", N, "   ", R, "##", N, "                                              |", "\n";
   echo "     |             ", R, "##", N, "   ", R, "#    #", N, "   ", R, "##", N, "                 TEAM PIEUVRE                  |", "\n";
   echo "     |              ", R, "####      ####", N, "                                                |", "\n";
