@@ -5,7 +5,7 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Fri Oct 13 20:51:23 2017 ARNAUD Hugo
-// Last update Fri Oct 13 20:55:00 2017 ARNAUD Hugo
+// Last update Sat Oct 14 09:22:15 2017 ARNAUD Hugo
 //
 
 function f_ls($commandTxt)
@@ -42,7 +42,7 @@ function f_ls($commandTxt)
 function f_triTab($tab)
 {
   $tabLen = 0;
-  while (isset($tab[$tabLen]))
+  while (isset($tab[$tabLen]) != NULL)
     {
       $tabLen = $tabLen + 1;
     }
@@ -62,7 +62,7 @@ function f_triTab($tab)
 	}
     }
   $a = 0;
-  while (isset($tab[$a]))
+  while (isset($tab[$a]) != NULL)
     {
       echo $tab[$a];
       $a = $a + 1;
