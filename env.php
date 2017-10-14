@@ -5,12 +5,12 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Sat Oct 14 09:36:39 2017 ARNAUD Hugo
-// Last update Sat Oct 14 09:36:51 2017 ARNAUD Hugo
+// Last update Sat Oct 14 10:12:56 2017 ARNAUD Hugo
 //
 
 include_once("microshell.php");
 
-function f_env()
+function functenv()
 {
   global $env;
   $a = 0;

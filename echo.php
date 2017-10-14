@@ -5,10 +5,10 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Sat Oct 14 09:35:49 2017 ARNAUD Hugo
-// Last update Sat Oct 14 09:35:52 2017 ARNAUD Hugo
+// Last update Sat Oct 14 10:12:45 2017 ARNAUD Hugo
 //
 
-function f_echo($commandTxt)
+function functecho($commandTxt)
 {
   $a = 5;
   $text = "";

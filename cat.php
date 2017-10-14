@@ -5,19 +5,19 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Sat Oct 14 09:35:13 2017 ARNAUD Hugo
-// Last update Sat Oct 14 09:35:17 2017 ARNAUD Hugo
+// Last update Sat Oct 14 10:20:53 2017 ARNAUD Hugo
 //
 
-function f_cat($commandTxt)
+function functcat($commandTxt)
 {
   $a = 0;
   while (isset($commandTxt[$a]) != NULL)
     $a = $a + 1;
-  if ($commandTxt[$a] != " ")
+  if ($commandTxt[$a - 1] != " ")
     $commandTxt[$a] = " ";
   $a = 4;
   $file = "";
-  while (isset($commandTxt[$a - 1]) != NULL)
+  while (isset($commandTxt[$a]) != NULL)
     {
       if ($commandTxt[$a] == " ")
 	{

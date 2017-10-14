@@ -5,10 +5,10 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Sat Oct 14 09:37:13 2017 ARNAUD Hugo
-// Last update Sat Oct 14 09:37:16 2017 ARNAUD Hugo
+// Last update Sat Oct 14 10:13:34 2017 ARNAUD Hugo
 //
 
-function f_ls($commandTxt)
+function functls($commandTxt)
 {
   $a = 3;
   $b = 0;
@@ -36,10 +36,10 @@ function f_ls($commandTxt)
 	}
     }
   closedir($dir);
-  f_triTab($tab);
+  functtriTab($tab);
 }
 
-function f_triTab($tab)
+function functtriTab($tab)
 {
   $tabLen = 0;
   while (isset($tab[$tabLen]) != NULL)
