@@ -23,7 +23,7 @@ function f_ls($commandTxt)
   while ($fichier = readdir($dir))
     {
       if ($fichier[0] != '.' && $fichier[0] != '..')
-	{
+    {
 	  if (is_link($fichier))
 	    $tab[$b] = $fichier . "@" . "\n";
 	  else if (is_dir($fichier))
