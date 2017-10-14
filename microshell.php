@@ -6,7 +6,7 @@
 // Login   <arnaud_h@etna-alternance.net>
 // 
 // Started on  Sat Oct 14 09:37:30 2017 ARNAUD Hugo
-// Last update Sat Oct 14 10:45:32 2017 ARNAUD Hugo
+// Last update Sat Oct 14 11:47:56 2017 ARNAUD Hugo
 //
 
 include_once("goodCommand.php");
@@ -16,6 +16,9 @@ include_once("clear.php");
 include_once("pwd.php");
 include_once("env.php");
 include_once("cat.php");
+include_once("cd.php");
+include_once("setenv.php");
+include_once("unsetenv.php");
 include_once("printDraw.php");
 
 printDrawStart();
